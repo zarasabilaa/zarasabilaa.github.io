@@ -1,135 +1,122 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portofolio zara</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Portfolio zara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: #0a192f;
-            color: #ffffff;
-        }
-        .navbar {
-            background-color: #112240;
-        }
-        .card {
-            background-color: #112240;
-            border: none;
-        }
-        .about-img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-        }
-        .hero {
-            position: relative;
-            background: linear-gradient(135deg, #0a192f, #112240);
-            color: #ffffff;
-            text-align: left;
-            padding: 50px 0;
-        }
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .hero-text {
-            max-width: 50%;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #b6a0c4;
-        }
-        .hero img {
-            max-width: 350px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #2b1055, #7597de);
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Zahraa</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <div class="hero-text">
-                <h1>ZARA</h1>
-                <p>Zahra Sabila <br> Kelas 1B D4 Teknik Informatika</p>
-            </div>
-            <img src="foto 1.jpg" alt="Foto Zahraa">
-        </div>
+<body class="text-white">
+    <header class="flex justify-between items-center p-6 fixed w-full bg-opacity-80 bg-gray-900 z-50">
+        <div class="text-2xl font-bold">Portofolio</div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a class="text-white hover:text-gray-300" href="#home">Home</a></li>
+                <li><a class="text-white hover:text-gray-300" href="#about">About</a></li>
+                <li><a class="text-white hover:text-gray-300" href="#skills">Skills</a></li>
+                <li><a class="text-white hover:text-gray-300" href="#project">Project</a></li>
+                <li><a class="text-white hover:text-gray-300" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <section id="about" class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img src="foto 2.jpg" alt="Foto Zahraa" class="about-img">
-            </div>
-            <div class="col-md-8">
-                <h2 class="text-center text-md-start">Tentang Saya</h2>
-                <p>Saya adalah mahasiswa tingkat lanjut di Universitas Logistik dan Bisnis Internasional, yang saat ini sedang menempuh pendidikan di program studi D4 Teknik Informatika. Saya memiliki semangat yang tinggi untuk terus berkembang dan mengejar karir di bidang komputer dan pemrograman.</p>
-                <p>Selain memiliki minat yang kuat dalam pengembangan perangkat lunak, saya juga memiliki keahlian dalam desain grafis, terutama menggunakan alat-alat seperti Canva dan Figma. Saya sangat menikmati proses kreatif dalam merancang visual yang menarik dan fungsional.</p>
+    
+    <main id="home" class="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 pt-20">
+        <div class="text-center md:text-left md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Zahra Sabila</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Frontend Developer</h2>
+            <p class="text-gray-300 mb-6">Saya Mahasiswa Universitas Logistik dan Bisnis Internasional dengan jurusan D4 Teknik Informatika</p>
+            <a href="CV ZARA.pdf" download class="bg-white text-black px-6 py-2 rounded-full font-semibold mb-4">Download CV</a>
+        </div>
+        <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+            <div class="relative">
+                <img src="foto 1.jpg" alt="foto zara" class="rounded-full border-4 border-white" width="300" height="300">
             </div>
         </div>
+    </main>
+    
+    <section id="about" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">About Me</h2>
+        <p class="text-gray-300 max-w-2xl">
+            Saya adalah mahasiswa tingkat lanjut di Universitas Logistik dan Bisnis Internasional, 
+            yang saat ini sedang menempuh pendidikan di program studi D4 Teknik Informatika.
+            Saya memiliki semangat yang tinggi untuk terus berkembang dan mengejar karir di bidang komputer dan pemrograman.
+            Selain memiliki minat yang kuat dalam pengembangan perangkat lunak, saya juga memiliki keahlian dalam desain grafis, 
+            terutama menggunakan alat-alat seperti Canva dan Figma. Saya sangat menikmati proses kreatif dalam merancang visual yang menarik dan fungsional.</p>
+        </p>
     </section>
 
-    <section id="projects" class="container py-5 text-center">
-        <h2 class="text-center">Proyek</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card text-white mb-3">
-                    <div class="card-body">
-                        <img src="foto 3.jpg" alt="logo" class="about-img">
-                        <h5 class="card-title">Techpath</h5>
-                        <p class="card-text">techpath dibuat untuk membantu mahasiswa TI mempelajari tentang Web Development. Web development adalah proses pembuatan dan pemeliharaan situs web atau aplikasi web yang dapat diakses melalui internet.
-                            Dan kursus ini membantu mahasiswa untuk tes kemampuan diri yang sudah kamu pelajari web ini juga menyediakan rekomendasi karir atau perusahaan IT yang cocok dengan skill kamu.
-                            Tidak hanya itu kami menyediakan materi materi yang harus dipelajari oleh mahasiswa TI dan beberapa soal agar mengetahui seberapa mengertinya mahasiswa TI setelah membaca dan memahami
-                            semua materi yang telah disediakan.</p>
-                        <a href="https://azitriyadi.github.io/projek.github.io/" class="btn btn-primary" target="_blank">KLIK</a>
+    <section id="skills" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Development Skills</h3>
+                <div class="mb-4"><span>HTML</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4"><span>CSS</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4"><span>JavaScript</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Design & Tools</h3>
+                <div class="mb-4"><span>Figma</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4"><span>Canva</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4"><span>CapCut</span>
+                    <div class="w-full bg-gray-300 rounded-full h-4">
+                        <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="skills" class="container py-5 text-center">
-        <h2 class="text-center">Skill</h2>
-        <ul class="list-group list-group-flush text-light">
-            <li class="list-group-item">Pemrograman: HTML, CSS</li>
-            <li class="list-group-item">Framework: Bootstrap</li>
-            <li class="list-group-item">Desain Grafis: Canva, figma</li>
-            <li class="list-group-item">Pengelolaan Versi: GitHub</li>
-        </ul>
+    <section id="project" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Project</h2>
+        <div class="bg-gray-800 p-6 rounded-lg max-w-lg w-full">
+            <img src="foto 3.jpg" alt="Project Logo" class="mx-auto mb-4">
+            <h3 class="text-2xl font-semibold mb-2">TECHPATH</h3>
+            <p class="text-gray-300 mb-4">techpath dibuat untuk membantu mahasiswa TI mempelajari tentang Web Development. Web development adalah proses pembuatan dan pemeliharaan situs web atau aplikasi web yang dapat diakses melalui internet.
+                Dan kursus ini membantu mahasiswa untuk tes kemampuan diri yang sudah kamu pelajari web ini juga menyediakan rekomendasi karir atau perusahaan IT yang cocok dengan skill kamu.
+                Tidak hanya itu kami menyediakan materi materi yang harus dipelajari oleh mahasiswa TI dan beberapa soal agar mengetahui seberapa mengertinya mahasiswa TI setelah membaca dan memahami
+                semua materi yang telah disediakan.</p>
+            <a href="https://azitriyadi.github.io/projek.github.io/" class="text-blue-400 hover:text-blue-300">View on GitHub</a>
+        </div>
     </section>
-
-    <section id="contact" class="container py-5">
-        <h2 class="text-center">Kontak </h2>
-        <p class="text-center">Hubungi saya melalui email: <a href="mailto:zaraasabilaa@gmail.com" class="text-light">zaraasabilaa@gmail.com</a></p>
+    <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Contact</h2>
+        <p class="text-gray-300 mb-4">silahkan hubungi saya via WhatsApp or Instagram.</p>
+        <div class="flex space-x-6">
+            <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
     </section>
 
     <footer class="text-center py-3" style="background-color: #112240;">
         <p>&copy; 2025 Zahra Sabila</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
