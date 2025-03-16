@@ -145,16 +145,6 @@
             </div>
         </div>
     </section>
-    <!--contact-->
-    <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Contact</h2>
-        <p class="text-gray-300 mb-4">Silahkan hubungi saya via WhatsApp or Instagram.</p>
-        <div class="flex space-x-6">
-            <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-instagram"></i> Instagram</a>
-            
-        </div>
-    </section>
     <section id="contact-form" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <h2 class="text-4xl font-bold mb-6">Send a Message</h2>
         <p class="text-gray-300 mb-4">Silakan isi formulir di bawah untuk menghubungi saya.</p>
@@ -174,7 +164,33 @@
             <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-full font-semibold">Kirim </button>
         </form>
     </section>
-
+    <script>
+        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var phoneNumber = "6281463918825"; // Ganti dengan nomor WhatsApp Anda tanpa tanda +
+            
+            var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" +
+                "Nama: " + encodeURIComponent(name) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Pesan: " + encodeURIComponent(message);
+            
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+    <!--contact-->
+    <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Contact</h2>
+        <p class="text-gray-300 mb-4">Silahkan hubungi saya via WhatsApp or Instagram.</p>
+        <div class="flex space-x-6">
+            <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-instagram"></i> Instagram</a>
+            
+        </div>
+    </section>
     <footer class="text-center py-3" style="background-color: #112240;">
         <p> &copy; 2025 Zahra Sabila</p>
     </footer>
