@@ -138,17 +138,60 @@
             </div>
         </div>
     </section>
-
-    <!--contact-->
-    <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Contact</h2>
-        <p class="text-gray-300 mb-4">Silahkan hubungi saya via WhatsApp or Instagram.</p>
-        <div class="flex space-x-6">
-            <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-instagram"></i> Instagram</a>
+    
+    <section id="contact" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 text-center md:text-left">
+        <!-- Contact Info -->
+        <div class="md:w-1/2 p-6">
+            <h2 class="text-4xl font-bold mb-6">Contact</h2>
+            <p class="text-gray-300 mb-4">Silahkan hubungi saya via WhatsApp atau Instagram.</p>
+            <div class="flex flex-col space-y-4">
+                <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="md:w-1/2 p-6">
+            <h2 class="text-4xl font-bold mb-6">Send Message</h2>
+            <form id="whatsappForm" class="w-full bg-gray-800 p-6 rounded-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-left text-white mb-2">Nama</label>
+                    <input type="text" id="name" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Nama" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-left text-white mb-2">Email</label>
+                    <input type="email" id="email" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-left text-white mb-2">Message</label>
+                    <textarea id="message" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold">Send Message</button>
+            </form>
         </div>
     </section>
-    
+    <script>
+        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var phoneNumber = "6281463918825"; 
+            
+            var whatsappURL = "https://wa.me/+6281463918825" + phoneNumber + "?text=" +
+                "Nama: " + encodeURIComponent(name) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Pesan: " + encodeURIComponent(message);
+            
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
     <footer class="text-center py-3" style="background-color: #112240;">
         <p> &copy; 2025 Zahra Sabila</p>
     </footer>
