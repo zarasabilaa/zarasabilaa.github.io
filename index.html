@@ -1,200 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile ZARA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script type="module" src="https://cdn.jsdelivr.net/gh/domyid/tracker@main/index.js"></script>
-    
-   <style>
-        body {
-            background: linear-gradient(135deg, #3d176a, #5789f5);
-            font-family: 'Arial', sans-serif;
-            scroll-behavior: smooth;
-        }
-    </style>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile ZARA — Blue Gradient (Enhanced Text)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="theme-color" content="#1e88e5" />
+  <script src="script.js"></script>
+  <style>    body{
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #38bdf8);
+      color: #f8fafc;
+      background-attachment: fixed;
+      scroll-behavior: smooth;
+    }
+    .glass{ backdrop-filter: blur(10px); background: rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); }
+    .gtext{ background: linear-gradient(90deg, #ffffff, #e0f2fe); -webkit-background-clip:text; color:transparent; }
+    .btn-shine{ position:relative; overflow:hidden }
+    .btn-shine::after{ content:""; position:absolute; top:-100%; left:-50%; width:30%; height:300%; background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent); transform: rotate(25deg); transition: .6s; }
+    .btn-shine:hover::after{ left:130%; }
+    a, p, h2, h3, h4, label { color: #f1f5f9; }
+    input, textarea { color: #0f172a; }
+</style>
 </head>
-<body class="text-white">
-    <header class="flex justify-between items-center p-6 fixed w-full bg-opacity-80 bg-gray-900 z-50">
-        <div class="text-2xl font-bold">My Profile</div>
+<body>
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="glass mx-3 mt-3 rounded-2xl shadow-lg">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <a href="#home" class="text-xl md:text-2xl font-extrabold gtext">ZARA PORTFOLIO</a>
         <nav>
-            <ul class="flex space-x-6">
-                <li><a class="text-white hover:text-gray-300" href="#home">Home</a></li>
-                <li><a class="text-white hover:text-gray-300" href="#about">About</a></li>
-                <li><a class="text-white hover:text-gray-300" href="#skills">Skills</a></li>
-                <li><a class="text-white hover:text-gray-300" href="#project">Project</a></li>
-                <li><a class="text-white hover:text-gray-300" href="#contact">Contact</a></li>
-            </ul>
+          <ul class="hidden md:flex items-center gap-6 font-semibold">
+            <li><a class="hover:text-sky-200" href="#home">Home</a></li>
+            <li><a class="hover:text-sky-200" href="#about">About</a></li>
+            <li><a class="hover:text-sky-200" href="#skills">Skills</a></li>
+            <li><a class="hover:text-sky-200" href="#projects">Projects</a></li>
+            <li><a class="hover:text-sky-200" href="#contact">Contact</a></li>
+          </ul>
+          <button id="navBtn" class="md:hidden text-xl text-white" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
         </nav>
-    </header>
-    
-     <!--home-->
-    <main id="home" class="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 pt-20">
-        <div class="text-center md:text-left md:w-1/2">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, i'm ZARA</h1>
-            <h2 class="text-2xl md:text-4xl font-bold mb-4">Web Developer OR UI/UX Design</h2>
-            <p class="text-gray-300 mb-6">Saya Mahasiswa Universitas Logistik dan Bisnis Internasional dengan jurusan D4 Teknik Informatika</p>
-            <a href="CV ZARA (2).pdf" download class="bg-white text-black px-6 py-2 rounded-full font-semibold mb-4">Download CV</a>
-        </div>
-        <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
-            <div class="relative">
-                <img src="gambar/foto 1.jpg" alt="foto zara" class="rounded-full border-4 border-white" width="300" height="300">
-            </div>
-        </div>
-    </main>
+      </div>
+      <div id="mobileNav" class="hidden md:hidden px-4 pb-4">
+        <a class="block py-2" href="#home">Home</a>
+        <a class="block py-2" href="#about">About</a>
+        <a class="block py-2" href="#skills">Skills</a>
+        <a class="block py-2" href="#projects">Projects</a>
+        <a class="block py-2" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
-    <!--about me-->
-    <section id="about" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">About Me</h2>
-        <img src="gambar/foto 2.jpg" alt="foto zara" class="rounded-lg border-4 border-white" width="300" height="300">
-        <p class="text-gray-300 max-w-2xl">
-            Hallo semuanyaa, perkenalkan nama saya Zahra Sabila bisa dipanggil Zara.
-            Saya adalah mahasiswa di Universitas Logistik dan Bisnis Internasional, 
-            yang saat ini sedang menempuh pendidikan di program studi D4 Teknik Informatika.
-            Saya memiliki semangat yang tinggi untuk terus berkembang dan mengejar karir di bidang komputer dan pemrograman.
-            Selain memiliki minat yang kuat dalam pengembangan perangkat lunak, saya juga memiliki keahlian dalam desain grafis, 
-            terutama menggunakan alat-alat seperti Canva dan Figma. Saya sangat menikmati proses kreatif dalam merancang visual yang menarik dan fungsional.</p>
+  <main id="home" class="pt-28">
+    <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+      <div>
+        <p class="uppercase tracking-widest text-sm font-semibold text-sky-100">Halo! Saya</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mt-2 text-white">
+          Zahra Sabila <span class="block gtext">Web Developer · UI/UX</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-100">Mahasiswa D4 Teknik Informatika — Universitas Logistik & Bisnis Internasional. Suka membangun website modern dan desain antarmuka yang cerah, bersih, dan fungsional.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="CV ZARA (2).pdf" download class="btn-shine inline-flex items-center gap-2 rounded-full bg-sky-600 text-white px-6 py-3 font-semibold shadow-lg hover:bg-sky-700 transition">
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a href="#contact" class="btn-shine inline-flex items-center gap-2 rounded-full bg-white text-sky-800 px-6 py-3 font-semibold border border-sky-200 shadow hover:scale-[1.02] transition">
+            <i class="fa-solid fa-paper-plane"></i> Hire Me
+          </a>
+        </div>
+      </div>
+      <div class="relative flex justify-center">
+        <div class="absolute -inset-6 rounded-[2rem] blur-2xl opacity-60 bg-gradient-to-tr from-blue-500 via-sky-400 to-cyan-300"></div>
+        <img src="gambar/foto 1.jpeg" alt="Foto Zara" class="relative w-[320px] h-[320px] md:w-[380px] md:h-[380px] object-cover rounded-[2rem] shadow-2xl ring-4 ring-white/60" />
+      </div>
+    </section>
+  </main>
+
+  <section id="about" class="max-w-7xl mx-auto px-6 mt-24">
+    <div class="glass rounded-3xl p-8 md:p-12 shadow-xl">
+      <h2 class="text-4xl font-extrabold gtext mb-4">About Me</h2>
+      <div class="mt-8 grid md:grid-cols-[260px_1fr] gap-8 items-start">
+        <img src="gambar/foto 2.jpeg" alt="Zara kedua" class="rounded-2xl w-full max-w-[260px] aspect-square object-cover ring-4 ring-sky-300" />
+        <p class="text-lg leading-relaxed text-slate-50">
+          Hallo semuanya, saya <strong>Zahra Sabila</strong> (Zara). Saya mahasiswa di <em>Universitas Logistik dan Bisnis Internasional</em> program studi D4 Teknik Informatika. Saya antusias membangun karir di dunia pemrograman dan desain antarmuka.
+          Selain pengembangan web, saya gemar eksplorasi desain grafis dengan <strong>Canva</strong> dan <strong>Figma</strong> untuk menciptakan visual yang menarik sekaligus mudah digunakan.
         </p>
-        <a href="https://github.com/zarasabilaa" class="text-white hover:text-gray-300 text-2xl"><i class="fab fa-github"></i> Github</a>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!--skills-->
-    <section id="skills" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Development Skills</h3>
-                <div class="mb-4"><span>HTML</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4"><span>CSS</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4"><span>JavaScript</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-blue-500 h-4 rounded-full" style="width: 40%;"></div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Design & Tools</h3>
-                <div class="mb-4"><span>Figma</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4"><span>Canva</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="mb-4"><span>CapCut</span>
-                    <div class="w-full bg-gray-300 rounded-full h-4">
-                        <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
+   <!-- SKILLS -->
+  <section id="skills" class="max-w-7xl mx-auto px-6 mt-24">
+    <h2 class="text-3xl md:text-4xl font-extrabold gtext mb-8">Skills</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Dev -->
+      <div class="glass rounded-3xl p-8 shadow-xl">
+        <h3 class="text-xl font-bold mb-6">Development</h3>
+        <div class="space-y-5">
+          <!-- item -->
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>HTML</span><span>80%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[80%] bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>CSS</span><span>75%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[75%] bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>JavaScript</span><span>60%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[60%] bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-400"></div></div>
+          </div>
         </div>
-    </section>
+      </div>
+      <!-- Design -->
+      <div class="glass rounded-3xl p-8 shadow-xl">
+        <h3 class="text-xl font-bold mb-6">Design & Tools</h3>
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>Figma</span><span>85%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[85%] bg-gradient-to-r from-emerald-400 via-cyan-400 to-yellow-300"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>Canva</span><span>90%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[90%] bg-gradient-to-r from-emerald-400 via-cyan-400 to-yellow-300"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2"><span>CapCut</span><span>80%</span></div>
+            <div class="h-3 rounded-full bg-white/60 overflow-hidden"><div class="h-full w-[80%] bg-gradient-to-r from-emerald-400 via-cyan-400 to-yellow-300"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!--project-->
-    <section id="project" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Project</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl">
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/foto 3.jpg" alt="Project Logo" class="mx-auto mb-4">
-                <h3 class="text-2xl font-semibold mb-2">TECHPATH</h3>
-                <a href="https://azitriyadi.github.io/projek.github.io/" class="text-blue-400 hover:text-blue-300">View on GitHub</a>
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/zara.png" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/q2wa (1).jpg" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/yaya podcast.png" alt="Project Logo" class="mx-auto mb-4">
-                <img src="gambar/goal dynasty (3).jpg" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/fashion.png" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/zaraphoto1.png" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/zaraphoto2.png" alt="Project Logo" class="mx-auto mb-4">
-            </div>
-            <div class="project-item bg-gray-800 p-6 rounded-lg">
-                <img src="gambar/ironman2.jpg" alt="Project Logo" class="mx-auto mb-4">
-            </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-7xl mx-auto px-6 mt-24">
+    <h2 class="text-3xl md:text-4xl font-extrabold gtext mb-8">Projects</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card template -->
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/foto 3.jpg" alt="TECHPATH" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">TECHPATH</h3>
+          <p class="mt-2 text-slate-700">Website showcase teknologi</p>
+          <div class="mt-4 flex gap-3">
+            <a href="https://azitriyadi.github.io/projek.github.io/" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold underline">
+              <i class="fa-brands fa-github"></i> View
+            </a>
+          </div>
         </div>
-    </section>
-    
-    <section id="contact" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 text-center md:text-left">
-        <!-- Contact Info -->
-        <div class="md:w-1/2 p-6">
-            <h2 class="text-4xl font-bold mb-6">Contact</h2>
-            <p class="text-gray-300 mb-4">Silahkan hubungi saya via WhatsApp atau Instagram.</p>
-            <div class="flex flex-col space-y-4">
-                <a href="https://wa.me/+6281463918825" class="text-white hover:text-gray-300 text-2xl">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.instagram.com/zhrsabila13?igsh=bm5qZ2plcmRmM3I3" class="text-white hover:text-gray-300 text-2xl">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="md:w-1/2 p-6">
-            <h2 class="text-4xl font-bold mb-6">Send Message</h2>
-            <form id="whatsappForm" class="w-full bg-gray-800 p-6 rounded-lg">
-                <div class="mb-4">
-                    <label for="name" class="block text-left text-white mb-2">Nama</label>
-                    <input type="text" id="name" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Nama" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-left text-white mb-2">Email</label>
-                    <input type="email" id="email" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Email" required>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-left text-white mb-2">Message</label>
-                    <textarea id="message" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold">Send Message</button>
-            </form>
-        </div>
-    </section>
-    
-    <script>
-        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-            var phoneNumber = "6281463918825"; 
-            
-            var whatsappURL = "https://wa.me/+6281463918825" + phoneNumber + "?text=" +
-                "Nama: " + encodeURIComponent(name) + "%0A" +
-                "Email: " + encodeURIComponent(email) + "%0A" +
-                "Pesan: " + encodeURIComponent(message);
-            
-            window.open(whatsappURL, "_blank");
-        });
-    </script>
+      </article>
 
-    <footer class="text-center py-3" style="background-color: #112240;">
-        <p> &copy; 2025 Zahra Sabila</p>
-    </footer>
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/molen-bagus.png" alt="MOLEN-BAGUS" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Molen-Bagus</h3>
+          <p class="mt-2 text-slate-700">Website UMKM molen bagus pada tugas proyek 1</p>
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/molen-bagus/molen-bagus" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold underline">
+              <i class="fa-brands fa-github"></i> View
+            </a>
+          </div>
+        </div>
+      </article>
 
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/zara.png" alt="Project" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Branding Visual</h3>
+          <p class="mt-2 text-slate-700">Eksperimen logo</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/q2wa (1).jpg" alt="Project" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Poster Series</h3>
+          <p class="mt-2 text-slate-700">Promosi digital.</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/yaya podcast.png" alt="Podcast" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Yaya Podcast</h3>
+          <p class="mt-2 text-slate-700">Desain cover</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/goal dynasty (3).jpg" alt="Goal Dynasty" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Goal Dynasty</h3>
+          <p class="mt-2 text-slate-700">Cover Games Olahraga</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/fashion.png" alt="Fashion" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Fashion Banner</h3>
+          <p class="mt-2 text-slate-700">Hero image e-commerce.</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/zaraphoto1.png" alt="Photo edit 1" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Photo Edit 1</h3>
+          <p class="mt-2 text-slate-700">Retouch & color grade.</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/zaraphoto2.png" alt="Photo edit 2" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Photo Edit 2</h3>
+          <p class="mt-2 text-slate-700">Retouch & tone mapping.</p>
+        </div>
+      </article>
+
+      <article class="group glass rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+        <img src="gambar/ironman2.jpg" alt="Poster Iron Man" class="h-48 w-full object-cover group-hover:scale-[1.03] transition" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold">ID Card</h3>
+          <p class="mt-2 text-slate-700">ID Card Kelompok 2 Ironman MORRIS IF 24</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 mt-24 mb-24">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <!-- Info -->
+      <div class="glass rounded-3xl p-8 shadow-xl">
+        <h2 class="text-3xl font-extrabold gtext">Contact</h2>
+        <p class="mt-4 text-slate-800/90">Silakan hubungi saya via WhatsApp atau Instagram.</p>
+        <div class="mt-6 flex flex-col gap-3 text-lg font-semibold">
+          <a href="https://wa.me/6281463918825" target="_blank" class="inline-flex items-center gap-3"><i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp</a>
+          <a href="https://www.instagram.com/zhrsabila13" target="_blank" class="inline-flex items-center gap-3"><i class="fa-brands fa-instagram text-2xl"></i> Instagram</a>
+          <a href="mailto:hello@example.com" class="inline-flex items-center gap-3"><i class="fa-solid fa-envelope text-2xl"></i> Email</a>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="glass rounded-3xl p-8 shadow-xl">
+        <h3 class="text-2xl font-bold">Send Message</h3>
+        <form id="whatsappForm" class="mt-6 space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-2">Nama</label>
+            <input id="name" type="text" class="w-full rounded-xl border border-white/60 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-fuchsia-400" placeholder="Nama" required />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+            <input id="email" type="email" class="w-full rounded-xl border border-white/60 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Email" required />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-2">Pesan</label>
+            <textarea id="message" rows="4" class="w-full rounded-xl border border-white/60 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Tulis pesan kamu..." required></textarea>
+          </div>
+          <button type="submit" class="btn-shine inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-6 py-3 font-semibold shadow-lg">
+            <i class="fa-solid fa-paper-plane"></i> Kirim via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="text-center py-6 text-sky-100 font-semibold">
+    &copy; 2025 <span class="gtext">Zahra Sabila</span>. All rights reserved.
+  </footer>
 </body>
 </html>
